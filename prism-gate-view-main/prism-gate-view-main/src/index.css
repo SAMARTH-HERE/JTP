@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 52%;
+
+    --accent: 220 16% 18%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 220 20% 7%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 7%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 210 100% 56%;
+
+    --chart-1: 210 100% 56%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 270 70% 60%;
+
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(210 100% 56% / 0.15), 0 0 40px hsl(210 100% 56% / 0.05);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 12px hsl(142 71% 45% / 0.2);
+  }
+
+  .glow-destructive {
+    box-shadow: 0 0 12px hsl(0 72% 51% / 0.2);
+  }
+
+  .glow-warning {
+    box-shadow: 0 0 12px hsl(38 92% 50% / 0.2);
+  }
+
+  .card-glow {
+    box-shadow: 0 1px 3px hsl(0 0% 0% / 0.3), 0 0 0 1px hsl(220 14% 18%), inset 0 1px 0 hsl(220 16% 20%);
+  }
+
+  .status-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .gradient-mesh {
+    background: 
+      radial-gradient(ellipse at 20% 50%, hsl(210 100% 56% / 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(270 70% 60% / 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, hsl(142 71% 45% / 0.03) 0%, transparent 50%);
+  }
+}
